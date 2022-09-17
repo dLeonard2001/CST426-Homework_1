@@ -28,7 +28,7 @@ public class Throwable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ray = mainCamera.ViewportPointToRay(new Vector3(0.5f,0.5f,0.5f));
+        ray = mainCamera.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
         if (Physics.Raycast(ray, out hit))
         {
             targetPoint = hit.point;
@@ -54,7 +54,7 @@ public class Throwable : MonoBehaviour
 
     public void addThrowable()
     {
-        if (currentAmount < 10)
+        if (currentAmount < maxAmount)
         {
             currentAmount++;
         }
